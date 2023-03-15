@@ -1,0 +1,23 @@
+{
+  "name": "articles-converter",
+  "version": "1.0.0",
+  "description": "Converts AsciiDoc artictles to Markdown",
+  "main": "index.js",
+  "scripts": {
+    "convert:samples": "downdoc -o dist/md/samples.md samples/sample.adoc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mknet/articles-converter.git"
+  },
+  "author": "Marcel Koch <m@rcelko.ch>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mknet/articles-converter/issues"
+  },
+  "homepage": "https://github.com/mknet/articles-converter#readme",
+  "dependencies": {
+    "downdoc": "^1.0.0-rc.2"
+  }
+}

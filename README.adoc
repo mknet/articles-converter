@@ -1,0 +1,19 @@
+= Article converter
+
+Converts AsciiDoc to Markdown files.
+
+== Setup
+[source,bash]
+----
+  npm install
+----
+
+.Try it wit a sample
+[source,bash]
+----
+  npm run convert:sample
+----
+
+Now, check `dist/md/samples`.
+
+
