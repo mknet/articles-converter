@@ -4,8 +4,10 @@
   "description": "Converts AsciiDoc artictles to Markdown",
   "main": "index.js",
   "scripts": {
-    "convert:samples": "downdoc -o dist/md/samples.md samples/sample.adoc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "convert": "git submodule update --recursive --remote && npm run clean && shx cp -R ./articles/* ./dist/. && ./node_modules/.bin/glob-run ./node_modules/.bin/downdoc dist/\\**/\\*.adoc && rm dist/README.*",
+    "convert:samples": "downdoc -o dist/samples.md samples/sample.adoc",
+    "clean": "rimraf dist/* && rimraf dist/*.",
+    "test": "npm run clean && npm run convert:samples && diff test/resources/samples.md dist/samples.md && npm run clean"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,9 @@
   },
   "homepage": "https://github.com/mknet/articles-converter#readme",
   "dependencies": {
-    "downdoc": "^1.0.0-rc.2"
+    "downdoc": "^1.0.0-rc.2",
+    "glob-run": "^0.1.7",
+    "rimraf": "^4.4.0",
+    "shx": "^0.3.4"
   }
 }
